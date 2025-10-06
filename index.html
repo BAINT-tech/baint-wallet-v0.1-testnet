@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BAINT Wallet — Testnet</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">🪙 <strong>BAINT Wallet</strong></div>
+    <div class="controls">
+      <select id="networkSelect">
+        <option value="auto">Detect Network</option>
+        <option value="sepolia">Sepolia (Ethereum)</option>
+        <option value="bsc_testnet">BSC Testnet</option>
+      </select>
+      <button id="connectBtn" class="btn">Connect BAINT Wallet (Test Mode)</button>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="card">
+      <h2>Wallet</h2>
+      <div class="field">
+        <div class="label">Address</div>
+        <div id="addr" class="mono">—</div>
+      </div>
+
+      <div class="grid">
+        <div class="field">
+          <div class="label">Network</div>
+          <div id="networkName" class="mono">—</div>
+        </div>
+        <div class="field">
+          <div class="label">Native Balance</div>
+          <div id="balance" class="mono">—</div>
+        </div>
+      </div>
+
+      <div style="margin-top:12px" class="label">Send Native Coin (ETH / tBNB)</div>
+      <input id="to" placeholder="Recipient address (0x...)" />
+      <input id="amount" placeholder="Amount (e.g. 0.01)" />
+      <div class="row">
+        <button id="sendBtn" class="btn">Send</button>
+        <button id="faucetBtn" class="btn ghost">Add Mock TX (dev)</button>
+      </div>
+
+      <div id="sendStatus" class="muted" style="margin-top:8px"></div>
+    </section>
+
+    <section class="card">
+      <h3>Transaction History</h3>
+      <div id="txList" class="tx-list muted">No transactions yet.</div>
+      <div style="margin-top:12px" class="muted small">History stored locally in your browser for demo only.</div>
+    </section>
+  </main>
+
+  <footer class="footer">BAINT Wallet • Testnet Demo — Do not use with real funds</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/ethers@6.7.0/dist/ethers.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
